@@ -22,3 +22,13 @@ The government makes the rules and regulations.
 2. Stock shares simulation.  
   We can probably integrate an external API or have to see how we can achieve this feature. Implementing the algorithms would also be nice.
 
+
+## Software options:  
+- Backend = Elixir + Phoenix  
+- Frontend = Phoenix LiveView OR Flutter  
+- Deployment = AWS EC2 instance  
+- Database = PostgreSQL?  
+- Search = Elastic search OR algorithmic implementation?  
+- Caching = Probably not needed  
+- Observability = Probably not needed  
+- Microservices = Needed for now? Or as Kailash Nadh says, we should grow organically only.
