@@ -9,6 +9,7 @@ The government makes the rules and regulations.
   1. People buy shares in the company.
   2. Company issues a certificate. Now the company has got the money. That's it. The company won't be managing these investments the people are making. Now the people become owners of the company.
   3. The people sell the shares in a global/central market. Depending on how the company is doing, they get profit or loss.  
+  
 ## My observations (simulated a stock buying and selling operation in Kite):
 1. The system has low latency.
 2. The system has to be real-time, i.e the transactions, buying and placing orders, etc all have to be in real-time.
@@ -32,3 +33,12 @@ The government makes the rules and regulations.
 - Caching = Probably not needed  
 - Observability = Probably not needed  
 - Microservices = Needed for now? Or as Kailash Nadh says, we should grow organically only.
+
+
+## install elixir and phoenix in ubuntu:
+- wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
+- sudo apt update
+- sudo apt install esl-erlang
+- sudo apt install elixir
+- mix archive.install hex phx_new 
+- mix phx.new Zerodha_kite
