@@ -7,6 +7,7 @@ config :zerodha_kite, ZerodhaKite.Repo,
   hostname: "localhost",
   database: "zerodha_kite_dev",
   stacktrace: true,
+  port: "5500",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

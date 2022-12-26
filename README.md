@@ -42,3 +42,6 @@ The government makes the rules and regulations.
 - sudo apt install elixir
 - mix archive.install hex phx_new 
 - mix phx.new Zerodha_kite
+
+## docker command pull postgres
+docker run --name zerodha-kite-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5500:5432 -d postgres
