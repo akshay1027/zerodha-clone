@@ -35,7 +35,7 @@ The government makes the rules and regulations.
 - Microservices = Needed for now? Or as Kailash Nadh says, we should grow organically only.
 
 
-## install elixir and phoenix in ubuntu:
+## install elixir and phoenix in ubuntu:  
 - wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
 - sudo apt update
 - sudo apt install esl-erlang
@@ -43,5 +43,12 @@ The government makes the rules and regulations.
 - mix archive.install hex phx_new 
 - mix phx.new Zerodha_kite
 
-## docker command pull postgres
-docker run --name zerodha-kite-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5500:5432 -d postgres
+## docker command pull postgres:  
+docker run --name zerodha-kite-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5500:5432 -d postgres  
+
+## create a table:  
+mix phx.gen.context Admin User users name:string email:string:unique role:string address:string income_tax_return:integer photograph:string data_of_birth:date user_id:string:unique  
+
+## Create controller and view to handle request and give response:  
+mix phx.gen.json Admin User users name:string email:string:unique role:string address:string income_tax_return:integer photograph:string data_of_birth:date user_id:string:unique --no-context --no-schema  
+
