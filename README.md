@@ -52,3 +52,14 @@ mix phx.gen.context Admin User users name:string email:string:unique role:string
 ## Create controller and view to handle request and give response:  
 mix phx.gen.json Admin User users name:string email:string:unique role:string address:string income_tax_return:integer photograph:string data_of_birth:date user_id:string:unique --no-context --no-schema  
 
+## Some Decisions 27|12|22:  
+- We will leave KYC for now as there are lot of legal procedures involved in this. Use simple user authentication.  
+- Focus on local development for now. Production can be done later.  
+  ### Focus on
+  - How to simulate stock market.
+  - How people can buy and sell.
+
+## Research on how to simulate stock market:
+- https://github.com/fremantle-industries/tai  
+- https://github.com/tolyo/open-outcry  
+- https://github.com/stockmarkat/stockmarket-simulation  
