@@ -77,3 +77,18 @@ mix phx.gen.json Admin User users name:string email:string:unique role:string ad
 
 - Trading system:  
   is a computer software program that can be used to place orders for financial products over a network
+
+
+
+  ## Backend APIs required for stock market trading system:
+  1) Stock market simulator:
+    - A list of companies will be present in an array. We change the stock prise if them randomnly based on their industry.  
+    - This has to be a socket connection as we need to change the data in realtime.
+
+  2) Buy/Sell stock:
+    - User buys stock: **(No. of units * stock prise of company at that time)** is deducted from user s account.
+    - User sells stock: **(No. of units * stock prise of company at that time)** is added into his account.
+
+  3) User profile:
+    - Total money currently present to invest.
+    - No. of holdings.  
