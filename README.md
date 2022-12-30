@@ -63,3 +63,17 @@ mix phx.gen.json Admin User users name:string email:string:unique role:string ad
 - https://github.com/fremantle-industries/tai  
 - https://github.com/tolyo/open-outcry  
 - https://github.com/stockmarkat/stockmarket-simulation  
+
+
+## Terminologies:
+- Stock market:  
+  A stock market, equity market, or share market is the aggregation of buyers and sellers of stocks (also called shares), which represent ownership claims on businesses; 
+
+- Matching engine (Buy and sell):  
+  - An order matching system or simply matching system is an electronic system that matches buy and sell orders for a stock market, commodity market or other financial exchange.
+  - It is often part of a larger electronic trading system.  
+  - Algorithms used:  
+    Price/Time algorithm (or **First-in-First-out**). Basically queue.  
+
+- Trading system:  
+  is a computer software program that can be used to place orders for financial products over a network
