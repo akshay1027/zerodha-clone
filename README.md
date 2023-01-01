@@ -80,15 +80,74 @@ mix phx.gen.json Admin User users name:string email:string:unique role:string ad
 
 
 
-  ## Backend APIs required for stock market trading system:
-  1) Stock market simulator:
+## Backend APIs required for stock market trading system:
+1) Stock market simulator:
     - A list of companies will be present in an array. We change the stock prise if them randomnly based on their industry.  
     - This has to be a socket connection as we need to change the data in realtime.
 
-  2) Buy/Sell stock:
+2) Buy/Sell stock:
     - User buys stock: **(No. of units * stock prise of company at that time)** is deducted from user s account.
     - User sells stock: **(No. of units * stock prise of company at that time)** is added into his account.
 
-  3) User profile:
+3) User profile:
     - Total money currently present to invest.
     - No. of holdings.  
+
+
+## Companies:  
+[
+  {
+    "name": "Bajaj Finserv",
+    "value": 1547.85,
+    "volatility": 3,
+    "type": "Finance-Investment"
+  },
+  {
+    "name": "Adani Enterprise",
+    "value": 3858.35,
+    "volatility": 1.2,
+    "type": "Trading"
+  },
+  {
+    "name": "Titan company",
+    "value": 2597.50,
+    "volatility": 1,
+    "type": "Diamond & Jewellery"
+  },
+  {
+    "name": "Bajaj Finance",
+    "value": 6,575.44,
+    "volatility": 0.5,
+    "type": "Finance - NBFC"
+  },
+  {
+    "name": "HDFC Life",
+    "value": 566.25,
+    "volatility": 5,
+    "type": "	Life and Health Insurance"
+  },
+  {
+    "name": "ONGC",
+    "value": 146.75,
+    "volatility": 1,
+    "type": "Oil Exploration and Production"
+  },
+  {
+    "name": "Tata Steel",
+    "value": 112.65,
+    "volatility": 0.3,
+    "type": "Iron and Steel"
+  },
+  {
+    "name": "Reliance",
+    "value": 2547.20,
+    "volatility": 0.1,
+    "type": "Oil Exploration and Production"
+  },
+  {
+    "name": "ICICI Bank",
+    "value": 890.85,
+    "volatility": 9,
+    "type": "Bank - Private"
+  }
+]
