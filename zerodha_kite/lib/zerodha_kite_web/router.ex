@@ -20,6 +20,7 @@ defmodule ZerodhaKiteWeb.Router do
     get "/", PageController, :index
   end
 
+
   # Other scopes may use custom stacks.
   # scope "/api", ZerodhaKiteWeb do
   #   pipe_through :api

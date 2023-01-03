@@ -43,8 +43,20 @@ The government makes the rules and regulations.
 - mix archive.install hex phx_new 
 - mix phx.new Zerodha_kite
 
+## Once we have Elixir and Erlang, we are ready to install the Phoenix application generator:  
+mix archive.install hex phx_new  
+
+## Install phx application:  
+mix phx.new zerodha_kite  
+
 ## docker command pull postgres:  
 docker run --name zerodha-kite-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5500:5432 -d postgres  
+
+## create database:  
+mix ecto.create  
+
+## drop database:  
+mix ecto.drop  
 
 ## create a table:  
 mix phx.gen.context Admin User users name:string email:string:unique role:string address:string income_tax_return:integer photograph:string data_of_birth:date user_id:string:unique  
@@ -58,6 +70,17 @@ mix phx.gen.json Admin User users name:string email:string:unique role:string ad
   ### Focus on
   - How to simulate stock market.
   - How people can buy and sell.
+
+## |> in elixir:  
+orders = Order.get_orders(current_user)  
+transactions = Transaction.make_transactions(orders)  
+payments = Payment.make_payments(transaction, true)  
+  
+same code using pipeline operator:  
+current_user  
+|> Order.get_orders  
+|> Transaction.make_transactions  
+|> Payment.make_payments(true)  
 
 ## Research on how to simulate stock market:
 - https://github.com/fremantle-industries/tai  
@@ -82,7 +105,7 @@ mix phx.gen.json Admin User users name:string email:string:unique role:string ad
 
 ## Backend APIs required for stock market trading system:
 1) Stock market simulator:
-    - A list of companies will be present in an array. We change the stock prise if them randomnly based on their industry.  
+    - A list of companies will be present in an array. We change the stock prise in them randomnly based on their industry.  
     - This has to be a socket connection as we need to change the data in realtime.
 
 2) Buy/Sell stock:
@@ -94,60 +117,76 @@ mix phx.gen.json Admin User users name:string email:string:unique role:string ad
     - No. of holdings.  
 
 
+## Simulation of stock market:  
+- A function:
+  1) I/P : Stock value, Volatility of stock.
+  2) Process:
+    - Generate random number between 1 and -1.
+    - Stock value = stock value + (volatility * random number)
+  3) O/P: Return stock value.
+
+- We have to call this function say every 3 seconds.
+- We have to stream this data to the frontend as its live data.
+- Like this we have to implement for all the companies.
+
+
+## These companies data probably we can store in cache? As its not a lot of data the way am implementing.
+
 ## Companies:  
 [
   {
     "name": "Bajaj Finserv",
     "value": 1547.85,
     "volatility": 3,
-    "type": "Finance-Investment"
+    "industry": "Finance-Investment"
   },
   {
     "name": "Adani Enterprise",
     "value": 3858.35,
     "volatility": 1.2,
-    "type": "Trading"
+    "industry": "Trading"
   },
   {
     "name": "Titan company",
     "value": 2597.50,
     "volatility": 1,
-    "type": "Diamond & Jewellery"
+    "industry": "Diamond and Jewellery"
   },
   {
     "name": "Bajaj Finance",
     "value": 6,575.44,
     "volatility": 0.5,
-    "type": "Finance - NBFC"
+    "industry": "Finance - NBFC"
   },
   {
     "name": "HDFC Life",
     "value": 566.25,
     "volatility": 5,
-    "type": "	Life and Health Insurance"
+    "industry": "	Life and Health Insurance"
   },
   {
     "name": "ONGC",
     "value": 146.75,
     "volatility": 1,
-    "type": "Oil Exploration and Production"
+    "industry": "Oil Exploration and Production"
   },
   {
     "name": "Tata Steel",
     "value": 112.65,
     "volatility": 0.3,
-    "type": "Iron and Steel"
+    "industry": "Iron and Steel"
   },
   {
     "name": "Reliance",
     "value": 2547.20,
     "volatility": 0.1,
-    "type": "Oil Exploration and Production"
+    "industry": "Oil Exploration and Production"
   },
   {
     "name": "ICICI Bank",
     "value": 890.85,
     "volatility": 9,
-    "type": "Bank - Private"
+    "industry": "Bank - Private"
   }
 ]
+

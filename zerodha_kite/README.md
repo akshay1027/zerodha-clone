@@ -18,14 +18,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
 
-## |> in elixir:  
-orders = Order.get_orders(current_user)  
-transactions = Transaction.make_transactions(orders)  
-payments = Payment.make_payments(transaction, true)  
-  
-same code using pipeline operator:  
-current_user  
-|> Order.get_orders  
-|> Transaction.make_transactions  
-|> Payment.make_payments(true)  
 
